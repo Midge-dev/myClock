@@ -1,6 +1,13 @@
 .clock {
     background-color: black;
     color: white;
-    font-size: 60px;
-    text-align: center;
+    font-size: 72px;
+    display: flex;
+    justify-content: center;
+}
+
+.dropDown {
+    display: flex;
+    justify-content: center;
+    
 }

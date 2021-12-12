@@ -1,19 +1,20 @@
 import React from 'react'
 
-export default function DropDown({className}) {
+export default function DropDown({onClick}) {
+
+    const timeZones = [
+        {label: "New York", value: "America/New_York"},{label: "Los Angeles", value: "America/Los_Angeles"}]
+
     return (
-        <select className={className}>
+        <select onChange={onClick} >
             <option value="" >
-                text
+                Choose a Time Zone
             </option>
-            <option value="text1" >
-                different text
-            </option>
-            <option value="text2">
-                more text
-            </option>
-                
-                
+            {timeZones.map((tz) => {
+                return (
+                    <option value= {tz.value}>{tz.label}</option>
+                )
+            })}
         </select>
     )
 }
