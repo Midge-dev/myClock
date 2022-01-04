@@ -1,12 +1,9 @@
 .clock {
 	color: white;
 	font-family: 'Press Start 2P', cursive;
-	font-size: 40px;
+	font-size: 36px;
 	display: flex;
 	justify-content: center;
-}
-
-.dropDown {
-	display: flex;
-	justify-content: center;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
 }

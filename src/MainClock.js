@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import WeatherCard from './WeatherCardComponent';
+import Quotes from './QuoteComponent';
 
 const accessKey = 'JAVSWj2grC_pjDpfMPsIZIvPx6XHvLY-KYA_CD1b37M';
 
@@ -18,8 +19,14 @@ async function weatherApi() {
 	const data2 = await response2.json();
 	return {
 		timeZoneId: data.tz_id,
-		weather: data2.current
+		weather: data2
 	};
+}
+
+async function quotesApi() {
+	const response = await fetch("https://type.fit/api/quotes")
+	const data = await response.json();
+	return data;
 }
 class MainClock extends Component {
 	constructor(props) {
@@ -31,7 +38,8 @@ class MainClock extends Component {
 				timeZone: 'America/Los_Angeles'
 			}).format(new Date()),
 			timeZone: 'America/Los_Angeles',
-			weather: {}
+			weather: {},
+			quote: {}
 		};
 		// this.onClick = this.onClick.bind(this);
 	}
@@ -56,6 +64,10 @@ class MainClock extends Component {
 		this.setState({
 			weather: ipAddress.weather
 		});
+		const quotes = await quotesApi();
+		const quote = Math.floor(Math.random() * quotes.length);
+		console.log(quote);
+		this.setState({ quote: quotes[quote].text })
 	}
 
 	componentWillUnmount() {
@@ -71,6 +83,7 @@ class MainClock extends Component {
 			<div>
 				<div className="clock">{this.state.time}</div>
 				<WeatherCard className="weatherCard" weather={this.state.weather} />
+				<Quotes randomQuote={this.state.quote}/>
 			</div>
 		);
 	}
