@@ -24,7 +24,7 @@ async function weatherApi() {
 }
 
 async function quotesApi() {
-	const response = await fetch("https://type.fit/api/quotes")
+	const response = await fetch('https://type.fit/api/quotes');
 	const data = await response.json();
 	return data;
 }
@@ -39,7 +39,7 @@ class MainClock extends Component {
 			}).format(new Date()),
 			timeZone: 'America/Los_Angeles',
 			weather: {},
-			quote: {}
+			quote: ''
 		};
 		// this.onClick = this.onClick.bind(this);
 	}
@@ -66,8 +66,7 @@ class MainClock extends Component {
 		});
 		const quotes = await quotesApi();
 		const quote = Math.floor(Math.random() * quotes.length);
-		console.log(quote);
-		this.setState({ quote: quotes[quote].text })
+		this.setState({ quote: quotes[quote].text });
 	}
 
 	componentWillUnmount() {
@@ -81,9 +80,13 @@ class MainClock extends Component {
 	render() {
 		return (
 			<div>
-				<div className="clock">{this.state.time}</div>
-				<WeatherCard className="weatherCard" weather={this.state.weather} />
-				<Quotes randomQuote={this.state.quote}/>
+				<div>
+					<div className="clock">{this.state.time}</div>
+				</div>
+				<div className='container'>
+					<WeatherCard className="weatherCard" weather={this.state.weather} />
+					<Quotes className='quotes' randomQuote={this.state.quote} />
+				</div>
 			</div>
 		);
 	}

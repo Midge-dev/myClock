@@ -1,6 +1,9 @@
 body {
-  background-color: ;
+  background-size: cover !important;
+  background-position: fixed !important;
 }
+
+
 
 
 /* body {
