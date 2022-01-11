@@ -11,10 +11,10 @@ async function makeRequest() {
 }
 
 async function weatherApi() {
-	const response = await fetch(`http://api.weatherapi.com/v1/ip.json?key=293ae895f9244bf0a66180139220301&q=auto:ip`);
+	const response = await fetch(`https://api.weatherapi.com/v1/ip.json?key=293ae895f9244bf0a66180139220301&q=auto:ip`);
 	const data = await response.json();
 	const response2 = await fetch(
-		`http://api.weatherapi.com/v1/forecast.json?key=293ae895f9244bf0a66180139220301&q=${data.city}`
+		`https://api.weatherapi.com/v1/forecast.json?key=293ae895f9244bf0a66180139220301&q=${data.city}`
 	);
 	const data2 = await response2.json();
 	return {
@@ -66,7 +66,7 @@ class MainClock extends Component {
 		});
 		const quotes = await quotesApi();
 		const quote = Math.floor(Math.random() * quotes.length);
-		this.setState({ quote: quotes[quote]});
+		this.setState({ quote: quotes[quote] });
 	}
 
 	componentWillUnmount() {
@@ -83,9 +83,9 @@ class MainClock extends Component {
 				<div>
 					<div className="clock">{this.state.time}</div>
 				</div>
-				<div className='container'>
+				<div className="container">
 					<WeatherCard className="weatherCard" weather={this.state.weather} />
-					<Quotes className='quotes' randomQuote={this.state.quote} />
+					<Quotes className="quotes" randomQuote={this.state.quote} />
 				</div>
 			</div>
 		);
