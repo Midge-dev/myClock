@@ -21,3 +21,9 @@
 	font-family: 'Press Start 2P', cursive;
 	font-size: 26px;
 }
+
+.quotes span {
+	display: block;
+	margin-top: 16px;
+	font-size: 18px;
+}

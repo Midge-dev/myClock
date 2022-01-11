@@ -66,7 +66,7 @@ class MainClock extends Component {
 		});
 		const quotes = await quotesApi();
 		const quote = Math.floor(Math.random() * quotes.length);
-		this.setState({ quote: quotes[quote].text });
+		this.setState({ quote: quotes[quote]});
 	}
 
 	componentWillUnmount() {

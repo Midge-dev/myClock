@@ -1,10 +1,9 @@
 body {
-  background-size: cover !important;
-  background-position: fixed !important;
+	background-size: cover !important;
+  background-repeat: no-repeat !important;
+	
+	
 }
-
-
-
 
 /* body {
   margin: 0;
