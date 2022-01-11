@@ -2,7 +2,7 @@
 	"name": "clock",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "https://midge-dev.github.io",
+	"homepage": "https://midge-dev.github.io/myClock/",
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.11.4",
 		"@testing-library/react": "^11.1.0",
@@ -24,10 +24,21 @@
 		"eject": "react-scripts eject"
 	},
 	"eslintConfig": {
-		"extends": [ "react-app", "react-app/jest" ]
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
 	},
 	"browserslist": {
-		"production": [ ">0.2%", "not dead", "not op_mini all" ],
-		"development": [ "last 1 chrome version", "last 1 firefox version", "last 1 safari version" ]
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
 	}
 }
